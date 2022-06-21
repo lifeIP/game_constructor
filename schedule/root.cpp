@@ -1,7 +1,9 @@
 #include "lib.h"
-#include "Header.h"
+
 
 int main() {
+	MapWork asod;
+
 	short screen_resolution_num = 0;// setting the screen resolution. 0 - nice  bad > 0
 
 	sf::Uint32 style = sf::Style::Fullscreen;// setting the window style
@@ -25,8 +27,7 @@ int main() {
 		level[i] = 890;
 	}
 	unsigned int tileID = 890;
-	
-	std::cout << writing_the_basics("map_file.txt", 1200, 1024, tileID)  << std::endl;
+	std::cout << asod.writing_the_basics("map_file.txt", 120, 120, tileID)  << std::endl;
 
 	std::cout << map.loadMap("tile.png", sf::Vector2u(32, 32), level, sizex, sizey) << std::endl;
 	while (window.isOpen()) {

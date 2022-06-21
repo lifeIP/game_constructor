@@ -5,3 +5,4 @@
 #include <fstream>
 #include <SFML/Graphics.hpp>
 #include "WorldMap.h"
+#include "MapWork.h"

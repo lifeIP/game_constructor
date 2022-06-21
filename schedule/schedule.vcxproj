@@ -142,13 +142,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="map_storage.cpp" />
+    <ClCompile Include="MapWork.cpp" />
     <ClCompile Include="root.cpp" />
     <ClCompile Include="WorldMap.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h" />
     <ClInclude Include="lib.h" />
+    <ClInclude Include="MapWork.h" />
     <ClInclude Include="WorldMap.h" />
   </ItemGroup>
   <ItemGroup>
