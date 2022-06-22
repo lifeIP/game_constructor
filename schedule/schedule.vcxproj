@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="lib.h" />
     <ClInclude Include="MapWork.h" />
+    <ClInclude Include="MeshForMowing.h" />
     <ClInclude Include="WorldMap.h" />
   </ItemGroup>
   <ItemGroup>

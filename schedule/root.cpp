@@ -2,8 +2,6 @@
 
 
 int main() {
-	MapWork asod;
-
 	short screen_resolution_num = 0;// setting the screen resolution. 0 - nice  bad > 0
 
 	sf::Uint32 style = sf::Style::Fullscreen;// setting the window style
@@ -16,7 +14,6 @@ int main() {
 
 	sf::RenderWindow window(fullscreen_mode[screen_resolution_num], "GunGame", style);
 
-	WorldMap map;
 	int sizex = width / 32;
 	int sizey = height / 32;
 	std::cout << sizex << std::endl;
@@ -27,8 +24,14 @@ int main() {
 		level[i] = 890;
 	}
 	unsigned int tileID = 890;
-	std::cout << asod.writing_the_basics("map_file.txt", 120, 120, tileID)  << std::endl;
-
+	
+	WorldMap map;
+	const std::string map_storage = "1";
+	const std::string map_changes = "2";
+	const std::string map_buffer = "3";
+	sf::Vector2u size_map = sf::Vector2u(sizex,sizey);
+	sf::Vector2u coord_center = sf::Vector2u((unsigned int)(sizex/2), (unsigned int)(sizey/2));
+	MeshForMowing mesh(map_storage,map_changes, map_buffer,size_map,coord_center);
 	std::cout << map.loadMap("tile.png", sf::Vector2u(32, 32), level, sizex, sizey) << std::endl;
 	while (window.isOpen()) {
 		sf::Event event;
@@ -49,8 +52,9 @@ int main() {
 			//In this cycle, everything that depends on the buttons is processed.
 		}
 		//In this cycle, everything that is displayed on the screen is processed.
-		window.clear(sf::Color::Black);
+		window.clear();
 		window.draw(map);
+		mesh.printFrame(&window);
 		window.display();
 	}
 	return 0;

@@ -2,6 +2,7 @@
 
 bool WorldMap::loadMap(const std::string& world_texture, sf::Vector2u texture_size, const int* tiles, const unsigned& width, const unsigned& height)
 {
+
     // load the tileset texture
     if (!m_tileset.loadFromFile(world_texture))
         return false;

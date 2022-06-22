@@ -22,7 +22,10 @@ bool MapWork::writing_the_basics(const std::string& resource_name, int width, in
 
 bool MapWork::writing_history(const std::string& resource_name, int coord_x, int coord_y, int id_tile)
 {
-	return false;
+	std::fstream file(resource_name, std::ios_base::out);
+	if (!file.is_open())
+		return 0;
+	return 1;
 }
 
 bool MapWork::save_changes(const std::string& resource_name, const std::string& resource_history_name)
